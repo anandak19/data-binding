@@ -1,0 +1,61 @@
+<div class="profile">
+    <div class="profile__container" *ngFor="let u of user">
+        <h1 class="profile__title" [innerText]="pageTitle"></h1>
+
+        <div class="profile__name-ribbon">
+            <div class="profile__profile-pic">
+                <img [src]="u.profilePicUrl" alt="Profile Picture">
+            </div>
+            <div class="profile__ribbon-text">
+                <h1 class="profile__userName">{{ u.userName }}</h1>
+                <p>{{ u.emailId }}</p>
+                <p>+91 {{ u.phone }}</p>
+            </div>
+        </div>
+        
+
+        <div class="profile__location-ribbon">
+            <h3 class="profile__loc-ribbon-title">Delivery Address</h3>
+            <div *ngFor="let u of user">
+              
+                <div class="profile__address-block">
+                  <div class="profile__addr-block" [class.profile__active-block]="u.firstAddress.active">
+                    <h4>First Address</h4>
+                    <p>{{ u.firstAddress.street }}</p>
+                    <p>{{ u.firstAddress.city }}</p>
+                    <p>{{ u.firstAddress.state }}</p>
+                    <p>{{ u.firstAddress.postalCode }}</p>
+
+                    <input class="profile__addr-activate" type="radio" [id]="'firstAddressRadio_' + u.userName" name="addressSelection" [(ngModel)]="selectedAddress" [value]="u.firstAddress" (change)="updateAddressActive(u.firstAddress)">
+                    <label [for]="'firstAddressRadio_' + u.userName" class="profile__activate-address">Set Active</label>
+                  </div>
+              
+                  <div class="profile__addr-block" [class.profile__active-block]="u.secondAddress.active">
+                    <h4>Second Address</h4>
+                    <p>{{ u.secondAddress.street }}</p>
+                    <p>{{ u.secondAddress.city }}</p>
+                    <p>{{ u.secondAddress.state }}</p>
+                    <p>{{ u.secondAddress.postalCode }}</p>
+
+                    <input class="profile__addr-activate" type="radio" [id]="'secondAddressRadio_' + u.userName" name="addressSelection" [(ngModel)]="selectedAddress" [value]="u.secondAddress" (change)="updateAddressActive(u.secondAddress)">             
+                    <label [for]="'secondAddressRadio_' + u.userName" class="profile__activate-address">Set Active</label>
+                  </div>
+                </div>
+              </div>    
+        </div>
+
+        <div class="profile__plus-ribbon">
+          <h3>This feature is only available for plus members</h3>
+          <button class="profile__preferences-btn" [disabled]="isPlus" (click)="setPreferences()">Set Your Shoping Preferences</button>
+        </div>
+
+        <div class="profile__review">
+          <label  class="profile__review-question">Do you like this Profile page ? </label>
+          <input class="profile__input" #myReview (keyup)="keyup(myReview.value)">
+          <p class="profile__review-res">Your response: {{myReview.value}}</p>
+        </div>
+        
+
+
+    </div>
+</div>

@@ -1,0 +1,125 @@
+.profile{
+    background-color: #cce0ff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__container{
+        width: 90%;
+    }
+    &__title{
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__name-ribbon{
+        display: flex;
+        align-items: center;
+        height: 150px;
+        background-color: #828584b0;
+        padding: 0 28px;
+        border-radius: 10px;
+        margin-top: 60px;
+    }
+    &__profile-pic{
+        & img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+    }
+
+    &__ribbon-text{
+        margin-left: 18px;
+    }
+
+    &__location-ribbon{
+        margin-top: 12px;
+        background-color: #828584b0;
+        height: 240px;
+        padding: 0 28px;
+        border-radius: 10px;
+    }
+
+    &__address-block{
+        display: flex;
+        align-items: center;
+    }
+
+    &__addr-block{
+        margin-left: 18px;
+        margin: 8px;
+        height: 150px;
+        width: 200px;
+        padding: 16px;
+        border-radius: 10px;
+        background-color: rgb(124, 124, 124);
+    }
+
+    &__active-block{
+        margin-left: 18px;
+        padding: 8px;
+        background-color: rgb(89, 129, 240);
+    }
+    &__activate-address{
+        background-color: #cf7900;
+    }
+    &__addr-activate{
+        width: 20px;
+        height: 20px;
+    }
+
+    &__plus-ribbon{
+        margin-top: 12px;
+        background-color: #828584b0;
+        border-radius: 10px;
+        height: 100px;
+        padding: 0 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    &__preferences-btn{
+        margin-top: 14px;
+        padding: 8px;
+        width: 40%;
+        color: rgb(67, 51, 0);
+        font-size: 20px;
+        font-weight: 800;
+        border-radius: 30px;
+        background-color: #ff9500;
+        &:hover{
+            background-color: #cf7900;
+        }
+    }
+
+    &__review{
+        background-color: rgba(0, 0, 255, 0.27);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        border-radius: 10px;
+        margin-top: 12px;
+    }
+    &__review-question {
+        font-size: 18px;
+        color: #333;
+      }
+      &__input {
+        padding: 8px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 18px;
+        outline: none;
+      }
+      &__review-res {
+        font-size: 16px;
+        padding-left: 18px;
+        color: #0800ff;
+      }
+}
